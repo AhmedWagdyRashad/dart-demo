@@ -43,7 +43,10 @@ main() {
   list1.add(11);
   print("list.length= ${list1.length}");
 
-//collection for
+// collection for
   var list = [1, 2, 3, for (var i in arr2) i + 5];
   print(list);
+// set the collection 13-lec
+  var courses = {'Android', 'IOS', 'Dart'};
+  Set<String> courses1 = {'Android', 'I0s', 'Dart'};
 }
