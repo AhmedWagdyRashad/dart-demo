@@ -1,5 +1,5 @@
 main() {
-  print("hello world");
+  /* print("hello world");
   int c = 5;
   print("c = " + c.toString()); //concationation
   String name = "ahmed";
@@ -49,4 +49,27 @@ main() {
 // set the collection 13-lec
   var courses = {'Android', 'IOS', 'Dart'};
   Set<String> courses1 = {'Android', 'I0s', 'Dart'};
+
+  ////////////////////////////////////////////////////////////
+  var add2 = makeAdder(2); // add2 = (i) => 2 + i;
+  var add4 = makeAdder(4); // add4 = (i) => 4 + i;
+  print(add2(3));
+  print(add4(5));
+  var list = [1, 2, 3, 4];
+  list.forEach((element) {
+    print("item = ${element + 5}");
+  });
+  */
+  ////////////////////////////////////////////////////////////
+  var callBacks = [];
+  for (var i = 0; i < 5; i++) {
+    callBacks.add(() => print(i));
+  }
+  callBacks.forEach((e) =>
+      e()); // every item in the lis represent the function as ()=>print(i) , i =0,1,2,3,4
+}
+
+// function will retrun expresion
+Function makeAdder(num addBy) {
+  return (i) => addBy + i;
 }
