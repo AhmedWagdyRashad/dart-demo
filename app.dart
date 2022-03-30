@@ -61,15 +61,43 @@ main() {
   });
   */
   ////////////////////////////////////////////////////////////
-  var callBacks = [];
+  /* var callBacks = [];
   for (var i = 0; i < 5; i++) {
     callBacks.add(() => print(i));
   }
   callBacks.forEach((e) =>
-      e()); // every item in the lis represent the function as ()=>print(i) , i =0,1,2,3,4
+      e()); // every item in the list represent the function as ()=>print(i) , i =0,1,2,3,4*/
+
+  Student s = Student("ahmed", 26);
+  print("S = ${s.name}  ${s.age}");
 }
 
 // function will retrun expresion
 Function makeAdder(num addBy) {
   return (i) => addBy + i;
+}
+
+// class Student {
+//   String name;
+//   int age;
+//   Student() {
+//     this.name = "";
+//     this.age = 0;
+//   }
+//   Student(String name, int age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+// }
+
+class Student {
+  String name;
+  int age;
+  // Student() {
+  //   name = "";
+  //   this.age = 0;
+  // }
+  Student(this.name, this.age) {
+    print("new object");
+  }
 }
