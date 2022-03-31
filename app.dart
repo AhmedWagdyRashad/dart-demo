@@ -1,3 +1,5 @@
+import 'Point.dart';
+
 main() {
   /* print("hello world");
   int c = 5;
@@ -68,8 +70,12 @@ main() {
   callBacks.forEach((e) =>
       e()); // every item in the list represent the function as ()=>print(i) , i =0,1,2,3,4*/
 
-  Student s = Student("ahmed", 26);
-  print("S = ${s.name}  ${s.age}");
+  Student s = Student("ahmed", "Damietta");
+  s.info();
+  var p1 = Point({'x': 1, 'y': 2});
+  p1.info();
+  var p2 = Point.fromXAxis(4);
+  p2.info();
 }
 
 // function will retrun expresion
@@ -91,13 +97,33 @@ Function makeAdder(num addBy) {
 // }
 
 class Student {
-  String name;
-  int age;
+  var name;
+  var address;
+  //default constructor
+  Student(String name, String address) {
+    this.name = name;
+    this.address = address;
+  }
   // Student() {
   //   name = "";
   //   this.age = 0;
   // }
-  Student(this.name, this.age) {
+
+  Student.def(this.name, this.address) {
     print("new object");
   }
+  // //named constructor
+  Student.fromJson(List<String> json) {
+    this.name = json[0].toString();
+    this.address = json[1].toString();
+  }
+  info() {
+    print("S = ${this.name}  ${this.address}");
+  }
+}
+
+// Immutable objects will be created from this calss becouse it contains the const constructor
+class ImmutablePoint {
+  final num x, y;
+  const ImmutablePoint(this.x, this.y);
 }
