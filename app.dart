@@ -70,12 +70,17 @@ main() {
   callBacks.forEach((e) =>
       e()); // every item in the list represent the function as ()=>print(i) , i =0,1,2,3,4*/
 
-  Student s = Student("ahmed", "Damietta");
-  s.info();
-  var p1 = Point({'x': 1, 'y': 2});
-  p1.info();
-  var p2 = Point.fromXAxis(4);
-  p2.info();
+  // Student s = Student("ahmed", "Damietta");
+  // s.info();
+  // var p1 = Point({'x': 1, 'y': 2});
+  // p1.info();
+  // var p2 = Point.fromXAxis(4);
+  // p2.info();
+  var point = ImmutablePoint(1, 2);
+  // point.x = 1;
+  point.info();
+  var teatcher = Teatcher("a", 5);
+  teatcher.name = 'a';
 }
 
 // function will retrun expresion
@@ -126,4 +131,20 @@ class Student {
 class ImmutablePoint {
   final num x, y;
   const ImmutablePoint(this.x, this.y);
+  info() {
+    print("x = ${this.x}  y =${this.y}");
+  }
+}
+
+class Teatcher {
+  late String _name;
+  late int _age;
+  Teatcher(this._name, this._age);
+  String get name => _name;
+  set name(String name) => this._name;
+  int get age => _age;
+
+  info() {
+    print("name = ${this.name}  age =${this.age}");
+  }
 }
