@@ -127,6 +127,10 @@ class Student {
   }
 }
 
+class Point1 extends Point {
+  Point1(Map point) : super(point);
+}
+
 // Immutable objects will be created from this calss becouse it contains the const constructor
 class ImmutablePoint {
   final num x, y;
@@ -136,10 +140,10 @@ class ImmutablePoint {
   }
 }
 
-class Teatcher {
+class Teatcher implements Point {
   late String _name;
   late int _age;
-  Teatcher(this._name, this._age);
+  Teatcher(this._name, this._age, this.x, this.y);
   String get name => _name;
   set name(String name) => this._name;
   int get age => _age;
@@ -147,4 +151,10 @@ class Teatcher {
   info() {
     print("name = ${this.name}  age =${this.age}");
   }
+
+  @override
+  num x;
+
+  @override
+  num y;
 }
