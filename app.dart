@@ -79,7 +79,7 @@ main() {
   var point = ImmutablePoint(1, 2);
   // point.x = 1;
   point.info();
-  var teatcher = Teatcher("a", 5);
+  var teatcher = Teatcher("a", 5, 1, 2);
   teatcher.name = 'a';
 }
 
