@@ -81,6 +81,9 @@ main() {
   point.info();
   var teatcher = Teatcher("a", 5, 1, 2);
   teatcher.name = 'a';
+  Point p = Point({'x': 1, 'y': 2});
+  rint(p).pp();
+  rint1(p).pp();
 }
 
 // function will retrun expresion

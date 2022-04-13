@@ -12,3 +12,17 @@ class Point {
     print("x: ${this.x}, y: ${this.y}");
   }
 }
+
+class a {}
+
+extension rint on Point {
+  void pp() {
+    print("extension1");
+  }
+}
+
+extension rint1 on Point {
+  void pp() {
+    print("extension2");
+  }
+}
